@@ -1,83 +1,38 @@
-# TodoMVC: React-Redux
+# TodoMVC React-Redux Challenge
 
-## Description
+## Project Overview
 
-This application uses React in combination with Redux to implement the TodoMVC application.
+This project is a solution for a coding challenge that involves enhancing a TodoMVC application built with **React** and **Redux**. The challenge required implementing three main features:
 
--   [React](https://reactjs.org/) is a JavaScript library for creating user interfaces.
--   [Redux](https://redux.js.org/) centralizes your application's state.
--   [React-Redux](https://react-redux.js.org/) is designed to work with React's component model.
+1. **Delete a Task:** Implemented functionality to delete individual todo items.
+2. **Filter Tasks:** Added filtering capability to display all, active, or completed tasks.
+3. **Clear All Completed Tasks:** Implemented a feature to clear all completed tasks from the list.
 
-## Tasks
+## Challenge Solution
 
-### Delete a Task
-The goal of this task is to implement the delete functionality for a single TODO-Item. To achieve this we need to implement the following: 
+### 1. Delete a Task
 
-- Create deleteTodo function that dispatches an action of type DELETE_TODO.
+- **Action:** Created a `deleteTodo` action that dispatches a `DELETE_TODO` action with the todo's `id` as a payload.
+- **Reducer:** Updated the `todos` reducer to handle `DELETE_TODO` by filtering out the specified todo item.
+- **Component Integration:** Connected the `deleteTodo` action to the relevant component, allowing users to delete tasks via the UI.
 
-- Add the deleteTodo action to the mapDispatchToProps function.
+### 2. Filter Tasks
 
-- Extend the todos reducer the handle DELETE_TODO action type.
+- **Selector:** Extended the `getFilteredTodos` selector to filter todos based on their completion status (all, active, completed).
+- **Component Integration:** Integrated the filtering logic into the UI, enabling users to view tasks based on their status.
 
-- Use the action in the todo item component. 
+### 3. Clear All Completed Tasks
 
-### Filter all Tasks
-The goal of this task is to implement the filter functionality for TODO-Items. To achieve this we need to implement the following: 
+- **Action:** Created a `clearCompleted` action that dispatches a `CLEAR_COMPLETED` action.
+- **Reducer:** Updated the `todos` reducer to handle `CLEAR_COMPLETED` by removing all completed tasks from the state.
+- **Component Integration:** Connected the `clearCompleted` action to the UI, allowing users to clear completed tasks with a single click.
 
-- Extend the getFilteredTodos function the handle active and completed todos. 
+## Installation and Usage
 
-- Implement the getCompletedTodos logic to calculate the number of all completed todos.
+1. **Install Dependencies:**
 
-### Clear all Completed Tasks
-The goal of this task is to implement the delete functionality for all completed TODO-Items. To achieve this we need to implement the following: 
-
-- Create clearCompleted function that dispatches an action of type CLEAR_COMPLETED.
-
-- Add the clearCompleted action to the mapDispatchToProps function.
-
-- Extend the todos reducer the handle CLEAR_COMPLETED action type.
-
-- Use the action in the footer component. 
-
-
-## Implementation details
-
-This implementation uses Redux to manage state and data flow of the application.
-The Redux pattern is similar to a mvc pattern, with the main difference that Redux is unidirectional.
-Redux uses actions to dispatch a change, which is captured by reducers that update a central store.
-Once the state in the store updates, the view receives the new state and can reflect those changes to the user.
-
-Redux:\
-Model: Redux store\
-View: React ui components\
-Controller: React connected components + Redux reducers
-
-MVC:\
-Model: maintains the data and behavior of an application\
-View: displays the model in the ui\
-Controller: serves as an interface between view & model components
-
-The storage solution uses an in-memory data object that implements a simple array to hold the todos.
-
-## Build steps
-
-To build the static files, this application utilizes webpack. It minifies and optimizes output files and copies all necessary files to a `dist` folder.
-
-## Requirements
-
-The only requirement is an installation of Node, to be able to install dependencies and run scripts to serve a local server.
-
-```
-* Node (min version: 18.13.0)
-* NPM (min version: 8.19.3)
-```
-
-## Local preview
-
-```
-terminal:
+   ```bash
 1. npm install
 2. npm run dev
 browser:
-1. http://localhost:7001/
-```
+1. http://localhost:8080/#/
