@@ -32,7 +32,8 @@ This project is a solution for a coding challenge that involves enhancing a Todo
 1. **Install Dependencies:**
 
    ```bash
-1. npm install
-2. npm run dev
-browser:
-1. http://localhost:8080/#/
+   terminal:
+    1. npm install
+    2. npm run dev
+    browser:
+    http://localhost:7001/
