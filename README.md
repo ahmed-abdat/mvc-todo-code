@@ -27,9 +27,7 @@ This project is a solution for a coding challenge that involves enhancing a Todo
 - **Reducer:** Updated the `todos` reducer to handle `CLEAR_COMPLETED` by removing all completed tasks from the state.
 - **Component Integration:** Connected the `clearCompleted` action to the UI, allowing users to clear completed tasks with a single click.
 
-## Installation and Usage
-
-1. **Install Dependencies:**
+## Local preview
 
    ```bash
    terminal:
